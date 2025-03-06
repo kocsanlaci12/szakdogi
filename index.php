@@ -19,12 +19,16 @@
             <button class="btnLogin-popup">Bejelentkezés</button>
         </nav>
     </header>
+
+
     <div class="container">
         <label class="theme-switch">
             <input type="checkbox" id="theme-toggle">
             <span class="slider"></span>
         </label>
     </div>
+
+
     <div class="wrapper">
         <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
 
@@ -33,8 +37,8 @@
             <form action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <input type="text" required>
+                    <label>Neptun-kód</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
@@ -58,12 +62,12 @@
             <h2>Regisztráció</h2>
             <form action="#">
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
                     <input type="text" required>
-                    <label>Felhasználónév</label>
+                    <label>Neptun-kód</label>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                     <input type="email" required>
                     <label>Email</label>
                 </div>
@@ -71,9 +75,6 @@
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                     <input type="password" required>
                     <label>Jelszó</label>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">I agree to the terms & conditicions</label>
                 </div>
                 <button type="submit" class="btn">Regisztráció</button>
                 <div class="login-register">
