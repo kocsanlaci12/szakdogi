@@ -62,6 +62,11 @@
             <h2>Regisztráció</h2>
             <form action="register.php" method="post">
                     <div class="input-box">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <input type="text" name="name" required>
+                        <label>Név</label>
+                    </div>
+                    <div class="input-box">
                         <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
                         <input type="text" name="neptun" required>
                         <label>Neptun-kód</label>
