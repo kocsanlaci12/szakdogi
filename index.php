@@ -34,58 +34,59 @@
 
         <div class="form-box login">
             <h2>Bejelentkezés</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
-                    <input type="text" required>
-                    <label>Neptun-kód</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
-                    <label>Jelszó</label>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Emlékezz rá</label>
-                    <a href="#">Elfelejtett jelszó?</a>
-                </div>
-                <button type="submit" class="btn">Bejelentkezés</button>
-                <div class="login-register">
-                    <p>
-                        Nincs fiókod? <a href="#" class="register-link">Regisztráció</a>
-                    </p>
-                </div>
+            <form action="login.php" method="post">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
+                        <input type="text" name="neptun" required>
+                        <label>Neptun-kód</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" name="password" required>
+                        <label>Jelszó</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Emlékezz rá</label>
+                        <a href="#">Elfelejtett jelszó?</a>
+                    </div>
+                    <button type="submit" class="btn">Bejelentkezés</button>
+                    <div class="login-register">
+                        <p>
+                            Nincs fiókod? <a href="#" class="register-link">Regisztráció</a>
+                        </p>
+                    </div>
             </form>
         </div>
 
         <div class="form-box register">
             <h2>Regisztráció</h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
-                    <input type="text" required>
-                    <label>Neptun-kód</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" required>
-                    <label>Jelszó</label>
-                </div>
-                <button type="submit" class="btn">Regisztráció</button>
-                <div class="login-register">
-                    <p>
-                        Van már fiókod? <a href="#" class="login-link">Bejelentkezés</a>
-                    </p>
-                </div>
+            <form action="register.php" method="post">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="barcode-outline"></ion-icon></span>
+                        <input type="text" name="neptun" required>
+                        <label>Neptun-kód</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <input type="password" name="pwd" required>
+                        <label>Jelszó</label>
+                    </div>
+                    <button type="submit" class="btn">Regisztráció</button>
+                    <div class="login-register">
+                        <p>
+                            Van már fiókod? <a href="#" class="login-link">Bejelentkezés</a>
+                        </p>
+                    </div>
             </form>
         </div>
     </div>
 
+    
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

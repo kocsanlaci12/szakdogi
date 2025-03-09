@@ -272,12 +272,15 @@ header {
 }
 
 /*sötét mód*/
-/*
+
 .container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     max-width: 600px;
-    margin: 50px auto;
     padding: 20px;
     text-align: center;
+    z-index: 100;
 }
 
 .theme-switch {
@@ -345,4 +348,3 @@ input:checked + .slider:after {
     top: 16px;
     opacity: 1;
 }
-*/
