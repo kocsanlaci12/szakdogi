@@ -20,26 +20,32 @@ iconClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 })
 
-const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener("DOMContentLoaded", function () {
+    const neptunInputFields = document.querySelectorAll('input[name="neptun"]');
+    const passwordInputFields = document.querySelectorAll('input[name="pwd"], input[name="password"]');
+    
+    neptunInputFields.forEach(input => {
+        input.addEventListener('input', function () {
 
-function toggleTheme(){
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if(currentTheme === 'dark'){
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    } else{
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-}
+            if (this.value.length !== 6) {
+                this.setCustomValidity("A Neptun-kódnak pontosan 6 karakter hosszúnak kell lennie!");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+    });
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggle.checked = true;
-} else{
-    document.documentElement.setAttribute('data-theme', 'light');
-    themeToggle.checked = false;
-}
+    // Jelszó validáció
+    passwordInputFields.forEach(input => {
+        input.addEventListener('input', function () {
+            const value = this.value;
+            const passwordPattern = /^(?=.*\d\d$).{8,}$/; 
 
-themeToggle.addEventListener('change', toggleTheme);
+            if (!passwordPattern.test(value)) {
+                this.setCustomValidity("A jelszónak legalább 8 karakter hosszúnak kell lennie, és az utolsó két karakter szám legyen!");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+    });
+});
