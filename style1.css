@@ -180,3 +180,40 @@ input:checked + .slider:after {
 input[name="neptun"] {
     text-transform: uppercase;
 }
+
+.loader{
+    display:none;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.loader span{
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0, 213, 255, 1);
+    border: none;
+    margin-right: 15px;
+    border-radius: 50%;
+    animation: animation 1.3s ease-out infinite;
+}
+.loader span:nth-child(1){
+    animation-delay: 0.25s;
+}
+.loader span:nth-child(2){
+    animation-delay: 0.55s;
+}
+.loader span:nth-child(3){
+    animation-delay: 0.75s;
+}
+
+@keyframes animation {
+    0%, 100% {
+        opacity: 0;
+        box-shadow: 0px 0px 20px rgba(0, 213, 255, 0.8);
+
+    }
+    50% {
+        opacity: 1;
+        box-shadow: none;
+    }
+}
