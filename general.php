@@ -7,8 +7,11 @@ if (!isset($_SESSION["user_id"])) {
     exit();
 }
 
-?>
+$full_name = $_SESSION["user_name"];
+$name_parts = explode(" ", $full_name); // Felosztjuk a teljes nevet
+$first_name = $name_parts[1] ?? ''; // A második rész (pl. Miklós)
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,13 +28,12 @@ if (!isset($_SESSION["user_id"])) {
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
             <a href="main.php">Főoldal</a>
-            <a href="general.php">Kérdések</a>
+            <a href="general.php">Kérdések</a> <!-- Kérdések link átirányítása a general.php oldalra -->
             <a href="#">Kapcsolat</a>
             <a href="#">Súgó</a>
             <button class="btnLogin-popup" onclick="window.location.href='logout.php';">Kijelentkezés</button>
         </nav>
     </header>
-
 
     <div class="container">
         <label class="theme-switch">
@@ -39,7 +41,7 @@ if (!isset($_SESSION["user_id"])) {
             <span class="slider"></span>
         </label>
     </div>
-    
+
     <div id="generatorSection">
         <select id="categorySelect" onchange="updateCheckboxes()">
             <option value="analizis_1">Analízis 1</option>
@@ -54,6 +56,7 @@ if (!isset($_SESSION["user_id"])) {
         <div id="analizis1" style="display:block;">
             <input type="checkbox" value="gyumolcsok">Gyümölcsök<br>
             <input type="checkbox" value="zoldsegek">Zöldségek<br>
+            <input type="checkbox" value="bogyok">Bogyók<br>
         </div>
 
         <div id="analizis2" style="display:none;">
@@ -69,8 +72,7 @@ if (!isset($_SESSION["user_id"])) {
         <span></span>
         <span></span>
     </div>
-
-    
+    <!-- Kérdések szakasza -->
     <div id="questionsSection" style="display:none;">
         <div id="questions"></div>
         <progress id="progressBar" value="0" max="100" style="width: 100%; height: 20px; display: none;"></progress>
@@ -78,8 +80,10 @@ if (!isset($_SESSION["user_id"])) {
         <button id="nextBtn" onclick="nextQuestion()" style="display:none;">Következő</button>
         <button id="finishBtn" onclick="finishQuiz()" style="display:none;">Befejezés</button>
     </div>
+    
 
     <script src="general.js"></script>
+
     <script src="darklight.js"></script>
     <script src="script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
